@@ -1,0 +1,434 @@
+html {
+  /* 4 smooth scroling */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+  font-size: 6rem;
+  /* add border around text with little shadow */
+  text-shadow: 2px 0 15px #000, -2px 0 15px #000, 0 2px 15px #000,
+    0 -2px 15px #000, 1px 1px 15px #000, -1px -1px 15px #000, 1px -1px 15px #000,
+    -1px 1px 15px #000;
+
+  animation-name: entertain;
+  animation-duration: 3s;
+}
+
+/* animating h1 */
+@keyframes entertain {
+  from {
+    opacity: 0;
+    bottom: 22rem;
+    left: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: 2rem;
+    left: 50%;
+  }
+}
+
+h1 span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+p {
+  line-height: 2;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  letter-spacing: 3px;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.dark-section {
+  background-color: #393e46;
+  color: white;
+}
+
+.light-section {
+  background-color: white;
+  color: #393e46;
+}
+
+.dark-section,
+.light-section {
+  padding: 4rem 0;
+}
+
+.inner-container {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 0 !important;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* doing some test. also on bottom of page */
+nav ul li {
+  opacity: 0;
+  animation: textShow 1s forwards;
+}
+
+nav u li {
+  animation-delay: 0.5s;
+}
+
+nav ul li + li {
+  animation-delay: 0.75s;
+}
+
+nav ul li + li + li {
+  animation-delay: 1s;
+}
+
+nav ul li + li + li + li {
+  animation-delay: 1.25s;
+}
+
+nav ul li + li + li + li + li {
+  animation-delay: 1.5s;
+}
+/* end of this part of test */
+nav ul li a {
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+nav ul li a:hover {
+  color: white;
+  background-color: #393e46;
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  /* for parallax background*/
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url('../img/profile_photo.webp'); */
+  /* background-image: url('../img/code_1.jpg'); */
+  /* background-image: url('../img/code_3.jpg'); */
+  background-image: url('../img/code_2.jpg');
+  min-height: 100%;
+}
+
+/* MAIN */
+
+/* ABOUT ME SECTION */
+
+/* WORK SECTION */
+#work .row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#work .col {
+  flex: auto;
+  max-width: 33%;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.7s;
+}
+
+#work .animate {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+#work .col:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+#work .col a {
+  width: 100%;
+}
+
+#work img {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+#work figcaption {
+  text-align: center;
+  font-weight: 700;
+}
+
+#work span {
+  padding: 0 1rem;
+  opacity: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  vertical-align: middle;
+  transition: 1s opacity;
+}
+
+#work .col:hover span {
+  opacity: 1;
+}
+
+/* MY SKILLS SECTION */
+#my-skills {
+  text-align: center;
+}
+
+#my-skills .other-skills {
+  margin-top: 3rem;
+}
+
+#my-skills .other-skills ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+/* CONTACT SECTION */
+
+#contact h2 {
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  margin-bottom: 0.3rem;
+}
+
+/* right margin on icon */
+#contact svg {
+  margin-right: 1rem;
+}
+
+#contact .form-heading {
+  margin: 3rem 0 1rem;
+}
+
+#contact input,
+textarea,
+button {
+  display: block;
+  font-weight: bold;
+  color: #393e46;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0 1.5rem;
+  border: 3px solid #393e46;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  background-color: #393e46;
+  color: #fff;
+  border: 3px solid #393e46;
+  outline: none;
+}
+
+#contact button {
+  border: 3px solid #393e46;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+#contact button:hover,
+#contact button:focus {
+  background-color: #393e46;
+  color: #fff;
+}
+
+/* message when form is submited  */
+.form-submit-message {
+  /* initialy hide  */
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background-color: #393e46;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* FOOTER SECTION */
+footer {
+  padding: 2rem !important;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+footer ul li {
+  margin: 0 1rem;
+  opacity: 0.6;
+}
+
+footer ul li:hover {
+  opacity: 1;
+}
+
+footer p {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* @media */
+
+/* CHEETSHEET */
+
+/* Extra small devices :: phones :: 600px and down */
+/* Small :: portrait tablets and large phones :: 600px and up */
+/* Medium :: landscape tablets :: 768px and up */
+/* Large :: laptops/desktops :: 992px and up */
+/* Extra large :: laptops/desktops :: 1200px and up */
+
+@media only screen and (max-width: 1200px) {
+  .inner-container {
+    width: 85%;
+  }
+}
+
+/* medium screens  */
+@media only screen and (max-width: 992px) {
+  .inner-container {
+    width: 90%;
+  }
+}
+
+/* small screens */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  #work .row {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  #work .col {
+    min-width: 70%;
+    margin: 0 auto;
+  }
+
+  #work a {
+    width: 100%;
+  }
+}
+
+/* extra small screens  */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+
+  h1 {
+    width: 100%;
+  }
+
+  nav ul li {
+    flex: 1 1;
+  }
+
+  nav ul li a {
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+/* javascrip add class to nav links dinamically on scroll*/
+.active {
+  color: white;
+  background-color: #393e46;
+}
+
+/* DOING SOME TESTING */
+
+@keyframes textShow {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
